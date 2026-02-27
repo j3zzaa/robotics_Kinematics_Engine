@@ -1,1 +1,1 @@
-from .matrixMath import dotProduct
+from .matrixMath import dotProduct, multiplyMatrices

@@ -11,7 +11,7 @@ def runTest():
     print(f"Vector A: {vectorA}")
     print(f"Vector B: {vectorB}")
     print(f"Result: {result}")
-    print(f"Expected: 32.0")
+    print("Expected: 32.0")
 
 if __name__ == "__main__":
     runTest()
