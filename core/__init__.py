@@ -1,1 +1,1 @@
-from .matrixMath import dotProduct, multiplyMatrices
+from .matrixMath import dotProduct, multiplyMatrices, rotateX, rotateY, rotateZ, cleanMatrix
