@@ -1,0 +1,18 @@
+# Python Bytecode (Crucial: prevents commit pollution)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment and IDE Configurations
+.vscode/
+.env
+venv/
+env/
+
+# Testing Caches
+.pytest_cache/
+.coverage
+
+# Execution Outputs (Prevents data/plot ledger pollution)
+*.png
+*.log

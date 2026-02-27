@@ -1,0 +1,1 @@
+from .matrixMath import dotProduct
