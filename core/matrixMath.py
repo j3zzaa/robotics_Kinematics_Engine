@@ -41,9 +41,10 @@ def multiplyMatrices(matrixA, matrixB):
 
 def rotateX(theta):
     R_x = [
-        [1, 0, 0],
-        [0, math.cos(theta), math.sin(-theta)],
-        [0, math.sin(theta), math.cos(theta)]
+        [1, 0, 0, 0],
+        [0, math.cos(theta), -math.sin(theta), 0],
+        [0, math.sin(theta), math.cos(theta), 0],
+        [0, 0, 0, 1],
 
 ]
 
@@ -51,21 +52,37 @@ def rotateX(theta):
 
 def rotateY(theta):
     R_y = [
-        [math.cos(theta), 0, math.sin(theta)],
-        [0, 1, 0],
-        [math.sin(-theta), 0, math.cos(theta)]
+        [math.cos(theta), 0, math.sin(theta), 0],
+        [0, 1, 0, 0],
+        [-math.sin(theta), 0, math.cos(theta), 0],
+        [0, 0, 0, 1],
     ]
 
     return R_y
 
 def rotateZ(theta):
     R_z = [
-        [math.cos(theta), math.sin(-theta), 0],
-        [math.sin(theta), math.cos(theta), 0],
-        [0, 0, 1],
+        [math.cos(theta), -math.sin(theta), 0, 0],
+        [math.sin(theta), math.cos(theta), 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
     ]
 
     return R_z
+
+def translationMatrix(dx, dy, dz):
+    return [
+        [1, 0, 0, dx],
+        [0, 1, 0, dy],
+        [0, 0, 1, dz],
+        [0, 0, 0, 1],
+    ]
+
+def transformZ(theta, dz):
+    rotation = rotateZ(theta)
+    translation = translationMatrix(0, 0, dz)
+
+    return multiplyMatrices(translation, rotation)
 
 def cleanMatrix(matrix, tolerance=1e-15):
 
